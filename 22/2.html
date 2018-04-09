@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>哔哩哔哩弹幕视频网 - ( ゜- ゜)つロ 乾杯~</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="http://static1-1251738903.file.myqcloud.com/live2d/assets/waifu.css" />
+		<link href=" https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<style>
+			.footer {
+				text-align: center;
+				padding-top: 16px;
+				width: 100%;
+				height: 50px;
+			}
+			
+			.wname {
+				font-size: 16px;
+			}
+			
+			.label-status {
+				margin-right: 5px;
+			}
+			
+			.check>tbody>tr>td {
+				padding-top: 11px;
+				padding-bottom: 11px;
+			}
+			
+			.check th {
+				text-align: center;
+			}
+			
+			.check .center {
+				text-align: center;
+				vertical-align: middle;
+			}
+			
+			.check .sertitle {
+				vertical-align: middle;
+			}
+			
+			.status-success {
+				color: #5cb85c
+			}
+			
+			.status-warning {
+				color: #f0ad4e
+			}
+			
+			.status-danger {
+				color: #d9534f
+			}
+			
+			#server-container {
+				border-bottom: 1px solid #ddd;
+			}
+			
+			.barl>td {
+				border-top: none !important;
+				padding: 0 !important;
+			}
+			
+			.barl .progress {
+				margin: 0;
+				border-radius: 0;
+				height: 8px;
+				box-shadow: none;
+			}
+			
+			.barl .progress .progress-bar {
+				box-shadow: none;
+				opacity: 0.7;
+			}
+			
+			.barl .progress .progress-bar:hover {
+				opacity: 1;
+			}
+			
+			.barl .progress .progress-bar-default {
+				background-color: #EFEFEF;
+			}
+			
+			.progress .tooltip .tooltip-inner .ttime {
+				color: #A3A3A3;
+				font-size: 11px;
+			}
+			
+			.credit {
+				font-size: 12px;
+				color: #66CCFF;
+			}
+			
+			.credit a {
+				color: #999;
+			}
+			
+			.credit .pipe {
+				padding-left: 6px;
+				padding-right: 6px;
+				color: #DDD;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		</div>
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+
+			<ul class="nav navbar-nav navbar-right">
+
+			</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="waifu" draggable="true" id="dragdiv">
+
+			<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+			<!--<div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>-->
+		</div>
+
+		</div>
+
+		<script>
+			$(document).ready(function() {
+				$.ajax({
+					type: "GET",
+					url: "ajax.php",
+					data: '',
+					dataType: 'json',
+					success: function(data) {
+						$('#AllOnlineUSER').html(data.zx);
+						$('#all_count').html(data.all_count);
+						$('#donghua').html(data.donghua);
+						$('#fjcg').html(data.fjcg);
+						$('#yy').html(data.yy);
+						$('#wd').html(data.wd);
+						$('#gc').html(data.gc);
+						$('#gc1').html(data.gc1);
+						$('#kj').html(data.kj);
+						$('#yx').html(data.yx);
+						$('#sh').html(data.sh);
+						$('#yl').html(data.yl);
+						$('#ys').html(data.ys);
+						$('#nowtime').html(date('h:i:s', data.nowtime));
+					},
+					error: function(data) {
+						$('#AllOnlineUSER').html('error');
+						$('#all_count').html('error');
+						$('#donghua').html('error');
+						$('#fjcg').html('error');
+						$('#gc').html('error');
+						$('#gc1').html('error');
+						$('#yy').html('error');
+						$('#wd').html('error');
+						$('#kj').html('error');
+						$('#yx').html('error');
+						$('#sh').html('error');
+						$('#yl').html('error');
+						$('#ys').html('error');
+						$('#nowtime').html('error');
+					}
+				});
+			})
+		</script>
+		<script src=" https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src=" https://cdn.bootcss.com/mustache.js/2.3.0/mustache.js" type="text/javascript"></script>
+		<script src="js/config.js" type="text/javascript"></script>
+		<script src=" http://static1-1251738903.coscd.myqcloud.com/js/upscuits.js" type="text/javascript"></script>
+		<script src=" http://static1-1251738903.file.myqcloud.com/live2d/assets/waifu-tips.js"></script>
+		<script src=" http://static1-1251738903.file.myqcloud.com/live2d/assets/live2d.js"></script>
+		<script type="text/javascript">
+			initModel("assets/")
+		</script>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?1a96dfb6b48a3c987eb6a224b000da7b";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+		<script type="text/javascript">
+			jQuery(document).ready(myApp.dashboard.init);
+		</script>
+		<script type="text/javascript">
+			var dragdiv = document.querySelector('#dragdiv');
+			var x, y; //记录到点击时鼠标到移动框左边和上边的距离
+
+			dragdiv.addEventListener('dragstart', function(e) {
+				e.dataTransfer.effectAllowed = "move"; //移动效果
+				e.dataTransfer.setData("text", ''); //附加数据，　没有这一项，firefox中无法移动
+				x = e.offsetX || e.layerX;
+				y = e.offsetY || e.layerY;
+				return true;
+			}, false);
+
+			document.addEventListener('dragover', function(e) { //取消冒泡 ,不取消则不能触发 drop事件
+				e.preventDefault() || e.stopPropagation();
+			}, false);
+
+			document.addEventListener('drop', function(e) {
+				dragdiv.style.left = (e.pageX - x) + 'px';
+				dragdiv.style.top = (e.pageY - y) + 'px';
+				e.preventDefault() || e.stopPropagation(); //不取消，firefox中会触发网页跳转到查找setData中的内容
+			}, false);
+		</script>
+	</body>
+
+</html>
