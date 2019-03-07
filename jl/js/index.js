@@ -170,8 +170,8 @@ $(function() {
 	var w = new Coder("md");
 	w.load("<h1 class='writecode'>个人简历</h1>");
 	w.load("<p><div class='writecode'>姓名：刘仁杰</div>");
-	w.load("<div class='writecode'>软件测试工程师(上海荟邮网络科技有限公司)</div>");
-	w.load("<div class='writecode'>2年测试工作经验</div></p>");
+	w.load("<div class='writecode'>软件测试工程师(上海XXX科技有限公司)</div>");
+	w.load("<div class='writecode'>3年测试工作经验</div></p>");
 	w.load("<h1 class='writecode'>联系我</h1>");
 	w.load("<ul>");
 	w.load("<li class='writecode'>QQ:1449621606</li>");
