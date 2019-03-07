@@ -38,28 +38,28 @@ function getBankAccount() {
     var prefix = "";
     switch (bank_no) {
     case "0102":
-        prefix = "622202";
+        prefix = "625826";
         break;
     case "0103":
-        prefix = "622848";
-        break;
-    case "0105":
-        prefix = "622700";
-        break;
-    case "0301":
-        prefix = "622262";
-        break;
-    case "104":
         prefix = "621661";
         break;
+    case "0105":
+        prefix = "955590";
+        break;
+    case "0301":
+        prefix = "412963";
+        break;
+    case "104":
+        prefix = "602907";
+        break;
     case "0303":
-        prefix = "622666";
+        prefix = "622256";
         break;
     case "305":
-        prefix = "622622";
+        prefix = "436738";
         break;
     case "0306":
-        prefix = "622556";
+        prefix = "621098";
         break;
     case "0308":
         prefix = "622588";
@@ -68,7 +68,7 @@ function getBankAccount() {
         prefix = "622155";
         break;
     case "302":
-        prefix = "622689";
+        prefix = "622199";
         break;
     case "304":
         prefix = "622630";
@@ -106,7 +106,7 @@ function getBankAccount() {
 }
 //随机生成手机号码
 function getMobile(){
-  var secondNums = new Array('3','4','5','7','8')
+  var secondNums = new Array('3','9','5','7','8')
   var newMobile = '1' + secondNums[Math.floor(Math.random()*secondNums.length)] +Math.floor(Math.random()*899999999 + 100000000); return newMobile
 }
 function genrate() {
