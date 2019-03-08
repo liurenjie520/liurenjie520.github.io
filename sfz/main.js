@@ -37,29 +37,29 @@ function getBankAccount() {
     var bank_no = '0102';
     var prefix = "";
     switch (bank_no) {
-    case "0102":
-        prefix = "625826";
+   case "0102":
+        prefix = "622202";
         break;
     case "0103":
-        prefix = "621661";
+        prefix = "622848";
         break;
     case "0105":
-        prefix = "955590";
+        prefix = "622700";
         break;
     case "0301":
-        prefix = "412963";
+        prefix = "622262";
         break;
     case "104":
-        prefix = "602907";
+        prefix = "621661";
         break;
     case "0303":
-        prefix = "622256";
+        prefix = "622666";
         break;
     case "305":
-        prefix = "436738";
+        prefix = "622622";
         break;
     case "0306":
-        prefix = "621098";
+        prefix = "622556";
         break;
     case "0308":
         prefix = "622588";
@@ -68,7 +68,7 @@ function getBankAccount() {
         prefix = "622155";
         break;
     case "302":
-        prefix = "622199";
+        prefix = "622689";
         break;
     case "304":
         prefix = "622630";
