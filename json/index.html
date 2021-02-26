@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://www.bejson.com/jsonviewernew/ -->
+<html class="ext-strict x-viewport ext-strict x-viewport"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>JSON在线视图查看器(Online JSON Viewer)</title>
+<meta name="keywords" content="JSON在线视图查看器(Online JSON Viewer),JSON在线编辑器, JSON在线格式化工具, JSON验证工具, JSON Editor Onlin">
+<meta name="description" content="JSON在线视图查看器(Online JSON Viewer), JSON在线编辑器, JSON在线格式化工具, JSON验证工具, JSON Editor Online">
+
+
+<link rel="stylesheet" type="text/css" href="./JSON在线视图查看器(Online JSON Viewer)_files/ext-all.css">
+<script src="./JSON在线视图查看器(Online JSON Viewer)_files/hm.js.下载"></script><script type="text/javascript" src="./JSON在线视图查看器(Online JSON Viewer)_files/clipboard.min.js.下载"></script>
+<script type="text/javascript" src="./JSON在线视图查看器(Online JSON Viewer)_files/bignumber.min.js.下载"></script>
+<script type="text/javascript" src="./JSON在线视图查看器(Online JSON Viewer)_files/ext-base.js.下载"></script>
+<script type="text/javascript" src="./JSON在线视图查看器(Online JSON Viewer)_files/ext-all.js.下载"></script>
+<style type="text/css" id="styleSheetIconCls">/* Ext.ux.iconCls */</style>
+<style type="text/css">.br0 {
+        COLOR: #009900
+    }
+
+    .st0 {
+        COLOR: #3366cc
+    }
+
+    .sy0 {
+        COLOR: #339933
+    }
+    .copy-success{
+        position: fixed;
+        z-index: 999999;
+        top: 50%;
+        left: 50%;
+        margin-left: -75px;
+        width: 200px;
+        background-color: rgba(0,0,0,.5);
+        color: #fff;
+        text-align: center;
+        display: none;
+        padding: 10px 0;
+    }
+    </style>
+<script>
+        window.onload = function () {
+            var oTxt = document.getElementById("edit");
+            oTxt.onkeydown = function (ev) {
+                var oEvent = ev || event;
+                if (oEvent.keyCode == 9) {
+                    if (oEvent.preventDefault) {
+                        oEvent.preventDefault();
+                    } else {
+                        window.event.returnValue = false;
+                    }
+                    oTxt.value += "    "; //这里放入了4个空格
+                }
+
+            }
+
+            var temp_str = sessionStorage.getItem('temp_str');
+            if (temp_str) {
+                document.getElementById("edit").value = temp_str;
+
+            }
+
+        }
+    </script>
+<script type="text/javascript" src="./JSON在线视图查看器(Online JSON Viewer)_files/jsonviewercn_encode.js.下载"></script><style type="text/css" id="styleSheetIconCls">/* Ext.ux.iconCls */</style>
+</head>
+<body class="  ext-safari x-border-layout-ct" id="ext-gen9" style="position: relative;"><div id="textPanel" class="x-panel x-border-panel" style="width: 400px; left: 0px; top: 0px;"><div class="x-panel-header x-unselectable" id="ext-gen21"><span class="x-panel-header-text" id="ext-gen70">JSON数据</span></div><div class="x-panel-bwrap" id="ext-gen22"><div class="x-panel-tbar" id="ext-gen23"><div id="ext-comp-1012" class="x-toolbar x-small-editor"><table cellspacing="0"><tbody><tr><td id="ext-gen26"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1013" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen28">复制</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td><span class="ytb-sep" id="ext-gen34"></span></td><td id="ext-gen35"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1014" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen37">格式化</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td><span class="ytb-sep" id="ext-gen43"></span></td><td id="ext-gen44"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1015" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen46">删除空格</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td><span class="ytb-sep" id="ext-gen52"></span></td><td id="ext-gen53"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1016" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen55">删除空格并转义</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td><span class="ytb-sep" id="ext-gen61"></span></td><td id="ext-gen62"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1017" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen64">去除转义</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td></tr></tbody></table></div></div><div class="x-panel-body" id="ext-gen24" style="width: 398px; height: 493px;"><textarea style="width: 390px; height: 487px; font-family: monospace;" autocomplete="off" id="edit" name="edit" class=" x-form-textarea x-form-field x-form-focus"></textarea></div></div></div><div id="tree" class="x-panel x-border-panel x-tree" style="left: 405px; top: 0px; width: 505px;"><div class="x-panel-header x-unselectable" id="ext-gen74"><span class="x-panel-header-text" id="ext-gen149">视图</span></div><div class="x-panel-bwrap" id="ext-gen75"><div class="x-panel-tbar" id="ext-gen76"><div id="ext-comp-1018" class="x-toolbar x-small-editor"><table cellspacing="0"><tbody><tr><td><span class="ytb-text" id="ext-gen79">查找:</span></td><td id="ext-gen80"><input type="text" size="20" autocomplete="off" id="searchTextField" name="searchTextField" class=" x-form-text x-form-field"></td><td id="ext-gen86"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1002" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen88">GO!</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td id="ext-gen94"><label id="searchResultLabel" style="padding-left: 10px; font-weight: bold;"></label></td><td id="ext-gen95"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn x-btn-text-icon" id="ext-comp-1019" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text icon_ext-gen19" type="button" id="ext-gen97">下一个</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td id="ext-gen103"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn x-btn-text-icon" id="ext-comp-1020" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text icon_ext-gen20" type="button" id="ext-gen105">上一个</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td><span class="ytb-sep" id="ext-gen111"></span></td><td id="ext-gen112"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1021" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen114">全部展开</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td id="ext-gen120"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1022" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen122">全部收缩</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td style="width: 100%;"><div class="ytb-spacer" id="ext-gen128"></div></td><td id="ext-gen129"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1023" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen131">回到首页</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td><td id="ext-gen137"><table border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap x-btn" id="ext-comp-1024" style="width: auto;"><tbody><tr><td class="x-btn-left"><i>&nbsp;</i></td><td class="x-btn-center"><em unselectable="on"><button class="x-btn-text" type="button" id="ext-gen139">关于</button></em></td><td class="x-btn-right"><i>&nbsp;</i></td></tr></tbody></table></td></tr></tbody></table></div></div><div class="x-panel-body" id="ext-gen77" style="overflow: auto; width: 503px; height: 493px;"><ul class="x-tree-root-ct x-tree-lines" id="ext-gen145"><li class="x-tree-node"><div ext:tree-node-id="ynode-18" class="x-tree-node-el x-tree-node-leaf x-unselectable " unselectable="on"><span class="x-tree-node-indent"></span><img src="./JSON在线视图查看器(Online JSON Viewer)_files/s.gif" class="x-tree-ec-icon x-tree-elbow-end"><img src="./JSON在线视图查看器(Online JSON Viewer)_files/s.gif" class="x-tree-node-icon" unselectable="on"><a hidefocus="on" class="x-tree-node-anchor" href="https://www.bejson.com/jsonviewernew/#" tabindex="1"><span unselectable="on">JSON</span></a></div><ul class="x-tree-node-ct" style="display:none;"></ul></li></ul></div></div></div><div id="grid" class="x-panel x-border-panel x-grid-panel" style="width: 300px; left: 915px; top: 0px;"><div class="x-panel-header x-unselectable" id="ext-gen151"><span class="x-panel-header-text" id="ext-gen183">属性</span></div><div class="x-panel-bwrap" id="ext-gen152"><div class="x-panel-body xedit-grid" id="ext-gen153" style="width: 298px; height: 519px;"><div class="x-grid3" hidefocus="true" id="ext-gen166" style="width: 298px; height: 519px;"><div class="x-grid3-viewport" id="ext-gen167"><div class="x-grid3-header" id="ext-gen168"><div class="x-grid3-header-inner" id="ext-gen175" style="width: 298px;"><div class="x-grid3-header-offset"><table border="0" cellspacing="0" cellpadding="0" style="width: 278px;"><thead><tr class="x-grid3-hd-row"><td class="x-grid3-hd x-grid3-cell x-grid3-td-name sort-asc" style="width: 137px;"><div class="x-grid3-hd-inner x-grid3-hd-name" unselectable="on" style="">Name<img class="x-grid3-sort-icon" src="./JSON在线视图查看器(Online JSON Viewer)_files/s.gif"></div></td><td class="x-grid3-hd x-grid3-cell x-grid3-td-value" style="width: 137px;"><div class="x-grid3-hd-inner x-grid3-hd-value" unselectable="on" style="">Value<img class="x-grid3-sort-icon" src="./JSON在线视图查看器(Online JSON Viewer)_files/s.gif"></div></td></tr></thead></table></div></div><div class="x-clear"></div></div><div class="x-grid3-scroller" id="ext-gen169" style="overflow-x: hidden; width: 298px; height: 495px;"><div class="x-grid3-body" id="ext-gen170"></div><a href="https://www.bejson.com/jsonviewernew/#" class="x-grid3-focus" tabindex="-1" id="ext-gen171"></a></div></div><div class="x-grid3-resize-marker" id="ext-gen173">&nbsp;</div><div class="x-grid3-resize-proxy" id="ext-gen174">&nbsp;</div></div></div></div></div><button id="copyTxt" style="height: 0;width: 0;overflow: hidden"></button>
+<div class="copy-success" id="copySuccess"></div>
+
+
+
+<div id="cpbtn"></div>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4aa52dbe1c3f25aa133d68ee023b1c61";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script><div id="ext-comp-1001" class="x-tip" style="position: absolute; z-index: 20000; visibility: hidden; display: none;"><div class="x-tip-tl"><div class="x-tip-tr"><div class="x-tip-tc"><div class="x-tip-header x-unselectable" id="ext-gen10"><span class="x-tip-header-text"></span></div></div></div></div><div class="x-tip-bwrap" id="ext-gen11"><div class="x-tip-ml"><div class="x-tip-mr"><div class="x-tip-mc"><div class="x-tip-body" id="ext-gen12" style="height: auto;"></div></div></div></div><div class="x-tip-bl x-panel-nofooter"><div class="x-tip-br"><div class="x-tip-bc"></div></div></div></div></div><select class="x-grid-editor x-hide-display"><option value="true">true</option><option value="false">false</option></select><div class="x-layout-split x-layout-split-west x-splitbar-h" id="textPanel-xsplit" style="left: 400px; top: 0px; height: 546px;">&nbsp;</div><div id="ext-gen71" class=" x-unselectable x-splitbar-proxy x-splitbar-proxy-h"></div><div class="x-layout-split x-layout-split-east x-splitbar-h" id="grid-xsplit" style="left: 910px; top: 0px; height: 546px;">&nbsp;</div><div id="ext-gen184" class=" x-unselectable x-splitbar-proxy x-splitbar-proxy-h"></div></body></html>
